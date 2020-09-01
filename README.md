@@ -13,4 +13,5 @@ Sensillo prollecto python con framework Django, para hacer un CRUD de Persona
 * ``` django-admin startproject nombre ```
 * ``` django-admin startapp nombre ```
 * ``` pip install mysqlclient ```
+* ``` pip install -r requirements.txt ```
 
