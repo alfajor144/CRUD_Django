@@ -9,3 +9,8 @@ Sensillo prollecto python con framework Django, para hacer un CRUD de Persona
 5. Crear super usuario con: ``` python manage.py createsuperuser ```
 6. Correr el servidor con: ``` python manage.py runserver ```
 
+## Comandos utiles:
+* ``` django-admin startproject nombre ```
+* ``` django-admin startapp nombre ```
+* ``` pip install mysqlclient ```
+
