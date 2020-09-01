@@ -1,0 +1,29 @@
+{% extends 'Home.html' %}
+{% block titulo %}
+    Editar de Persona
+{% endblock titulo %}
+{% block body %}
+<form method="POST">
+
+    {% csrf_token %}
+    {% if error%}
+        <h1> {{ error }}</h1>
+    {% else %}
+
+   <label>Nombre</label>
+   <input type= "text" name= "nombre" placeholder="{{persona.nombre}}"><br>
+
+   <label>Apellido</label>
+   <input type= "text" name= "apellido" placeholder="{{persona.apellido}}"><br>
+
+   <label>Nacionalidad</label>
+   <input type= "text" name= "nacionalidad" placeholder="{{persona.nacionalidad}}"><br>
+
+   <label>Descripcion</label>
+   <input type= "text" name= "descripcion" placeholder="{{persona.descripcion}}"><br>
+
+    <button type="submit">Crear</button>
+{%endif%}
+</form>
+<a href="{% url 'Home' %}">Home</a>
+{% endblock body %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}HOME{% endblock titulo %}</title>
+    {% block extracss %}
+    {% endblock extracss %}
+</head>
+<body>
+    {% block body %}
+        <h1>Bienbenido al HOME</h1>
+        <a href="{% url 'persona:listarPersona' %}">Listar Personas</a>
+        <a href="{% url 'persona:crearPersona' %}">Crear Persona</a>
+    {% endblock body %}
+
+    {% block extrajs %}
+    {% endblock extrajs %}
+</body>
+</html>

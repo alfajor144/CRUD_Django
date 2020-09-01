@@ -1,0 +1,47 @@
+{% extends 'Home.html' %}
+{% block titulo %}
+    Listado de Personas
+{% endblock titulo %}
+
+{% block extracss %}
+<style>
+    table, th, td {
+        border: 1px solid black;
+      }
+</style>
+{% endblock extracss %}
+
+{% block body %}
+    {% if personas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>nacionalidad</th>
+                    <th>descripcion</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <thead>
+                {% for persona in personas %}
+                    <tr>
+                        <td>{{persona.id}}</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.apellido}}</td>
+                        <td>{{persona.nacionalidad}}</td>
+                        <td>{{persona.descripcion}}</td>
+                        <td> 
+                            <a href="{% url 'persona:editarPersona' persona.id %}">Editar</a>
+                            <a href="{% url 'persona:eliminarPersona' persona.id %}">EliminarAutor</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </thead>
+        </table>
+    {% else %}
+        <h1>No existen persona registradas</h1>
+    {% endif %}
+    <a href="{% url 'Home' %}">Home</a>
+{% endblock body %}

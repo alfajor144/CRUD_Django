@@ -1,0 +1,31 @@
+{% extends 'Home.html' %}
+{% block titulo %}
+    Creacion de Persona
+{% endblock titulo %}
+{% block body %}
+<form method="POST">
+
+    {% csrf_token %}
+    {% if error%}
+        <h1> {{ error }}</h1>
+    {% else %}
+
+   <label>Nombre</label>
+   <input type= "text" name= "nombre"><br>
+
+   <label>Apellido</label>
+   <input type= "text" name= "apellido"><br>
+
+   <label>Nacionalidad</label>
+   <input type= "text" name= "nacionalidad"><br>
+
+   <label>Descripcion</label>
+   <input type= "text" name= "descripcion"><br>
+
+
+
+    <button type="submit">Crear</button>
+{%endif%}
+</form>
+<a href="{% url 'Home' %}">Home</a>
+{% endblock body %}
